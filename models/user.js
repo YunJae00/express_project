@@ -6,11 +6,12 @@ const userModel = {
   registerUser: function(userData, callback) {
     hasher({ password: userData.password }, function(err, pass, salt, hash) {
       const user = {
-        auth_id: 'local:' + userData.id,
-        id: userData.id,
-        email: userData.email,
+        auth_id : userData.auth_id,
+        ID : userData.ID,
         password: hash,
-        salt: salt,
+        email: userData.email,
+        name: userData.name,
+        salt: salt
       };
 
       dbMiddleware.insertUser(user, function(err, results) {

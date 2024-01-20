@@ -3,8 +3,8 @@ module.exports = function () {
     var conn = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: '',
-        database: 'example'
+        password: 'rnjsdbswo00!',
+        database: 'new'
     });
     conn.connect();
     return conn;
